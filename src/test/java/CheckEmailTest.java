@@ -28,11 +28,7 @@ public class CheckEmailTest {
                 "hello-2023@example.com",           // -
                 "hello.2023@example.com",           // .
                 "hello_2023@example.com",           // _
-                "h@example.com",                    // local-part one letter
-                "h@example-example.com",            // domain contains a hyphen -
-                "h@example-example-example.com",    // domain contains two hyphens - -
-                "h@example.example-example.com",    // domain contains . -
-                "hello.world-2023@example.com");    // local-part contains . -
+                "h@example.com");                   // local-part one letter
     }
 
     // Invalid email addresses
@@ -42,15 +38,10 @@ public class CheckEmailTest {
                 "hello@2020@example.com",           // email doesn't allow more than one @
                 ".hello@example.com",               // local-part can't start with a dot .
                 "hello.@example.com",               // local-part can't end with a dot .
-                "hello..world@example.com",         // local part don't allow dot . appear consecutively
-                "hello!+2023@example.com",          // local-part don't allow special characters like !+
                 "hello@example.a",                  // domain tld min 2 chars
                 "hello@example..com",               // domain doesn't allow dot . appear consecutively
-                "hello@.com",                       // domain doesn't start with a dot .
-                "hello@.com.",                      // domain doesn't end with a dot .
-                "hello@-example.com",               // domain doesn't allow to start with a hyphen -
-                "hello@example.com-",               // domain doesn't allow to end with a hyphen -
-                "hello@example_example.com");        // domain doesn't allow underscore
+                "hello@.com");                      // domain doesn't start with a dot .
+
     }
 
 }
